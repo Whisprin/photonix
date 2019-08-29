@@ -36,6 +36,11 @@ const App = ({ selectedFilters, onFilterToggle, onClearFilters, onShowSettings, 
         type: 'boolean',
         name: 'Watch folder for new photos',
       },
+      {
+        key: 'showBoundingBoxes',
+        type: 'boolean',
+        name: 'Show bounding boxes around objects',
+      },
     ]} />
   </ApolloProvider>
 )

@@ -3,7 +3,7 @@ import '../static/css/Settings.css'
 import { ReactComponent as CloseIcon } from '../static/images/close.svg'
 import folder from '../static/images/folder.svg'
 
-const Settings = ({ data, parentSettings, onSelectSourceDir, onHideModals }) => (
+const Settings = ({ data, parentSettings, onSelectSourceDir, onUpdateSetting, onHideModals }) => (
   <div className="Settings" onClick={onHideModals}>
     <div className="modal" onClick={(e) => {e.stopPropagation()}}>
       <span onClick={onHideModals}>
@@ -19,6 +19,10 @@ const Settings = ({ data, parentSettings, onSelectSourceDir, onHideModals }) => 
             if (item.type === 'path') {
               field = <input type="text" value={parentSettings ? parentSettings[item.key] : 'empty'} />
               icon = <span onClick={onSelectSourceDir}><img src={folder} className="folder" alt="" /></span>
+            }
+
+            if (item.type === 'boolean') {
+              field = <input type="checkbox" checked={parentSettings[item.key]} onChange={onUpdateSetting} />
             }
 
             return (

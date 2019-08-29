@@ -11,7 +11,11 @@ export default class AppContainer extends React.Component {
       selectedFilterIds: [],
       selectedFilters: [],
       detailPhoto: null,
-      settings: null,
+      settings: {
+        'sourceDirs': 'ok',
+        'watchSourceDirs': true,
+        'showBoundingBoxes': true,
+      },
       showSettings: false,
     }
     window.showSettings = (message) => {

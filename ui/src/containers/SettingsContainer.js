@@ -32,9 +32,13 @@ export default class SettingsContainer extends React.Component {
     }
   }
 
+  onUpdateSetting = () => {
+    console.log("TODO")
+  }
+
   render = () => {
     if (this.props.visible) {
-      return <Settings data={this.props.data} parentSettings={this.props.settings} onSelectSourceDir={this.onSelectSourceDir} onHideModals={this.props.onHideModals} />
+      return <Settings data={this.props.data} parentSettings={this.props.settings} onSelectSourceDir={this.onSelectSourceDir} onUpdateSetting={this.onUpdateSetting} onHideModals={this.props.onHideModals} />
     }
     return null
   }
